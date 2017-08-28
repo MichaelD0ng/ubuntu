@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		unzip \
 		xz-utils \
 		openssh-server \
+		cron \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& sed -i 's/^PermitRootLogin .*/PermitRootLogin yes/' /etc/ssh/sshd_config \
 	&& rm -rf /etc/update-motd.d/10-help-text \
