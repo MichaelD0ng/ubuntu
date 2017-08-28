@@ -23,7 +23,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		bzip2 \
 		unzip \
 		xz-utils \
-	&& rm -rf /var/lib/apt/lists/*
+		openssh-server
+	&& rm -rf /var/lib/apt/lists/* \
+	&& sed -i 's/^PermitRootLogin .*/PermitRootLogin yes/' /etc/ssh/sshd_config \
+	&& rm -rf /etc/update-motd.d/10-help-text \
+	&& echo root:e7SfdwhEztkv0T55|chpasswd
 
 ENV LANG C.UTF-8
 
