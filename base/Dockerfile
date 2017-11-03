@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		iputils-ping \
 		bzr \
 		git \
+		psmisc \
 		mercurial \
 		openssh-client \
 		subversion \
