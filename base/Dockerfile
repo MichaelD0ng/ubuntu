@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 MAINTAINER Michael Dong <michael.dong@vrviu.com>
-
+RUN sed -i 's/archive.ubuntu/mirrors.163/g' /etc/apt/sources.list
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		ca-certificates \
 		curl \
